@@ -1687,4 +1687,5 @@ bot.enable_save_next_step_handlers(delay=2)
 # WARNING It will work only if enable_save_next_step_handlers was called!
 bot.load_next_step_handlers()
 bot.set_webhook(
-    'https://dashboard.heroku.com/apps/resumebeeline/bot')  # TODO: You should write your url which deployed this project
+    'https://resumebeeline.herokuapp.com/bot')  # TODO: You should write your url which deployed this project
+
