@@ -320,7 +320,7 @@ def process_start(message):
     
 
 
-@bot.message_handler(content_types = ['text'])
+"""@bot.message_handler(content_types = ['text'])
 def checker(message):
 
     print(message.text)
@@ -337,7 +337,7 @@ def checker(message):
         return                         
     else:
         print("in else")
-        bot.reply_to(message, "Выбери вариант кнопкой (Tugmani bosib variantni tanlang)")
+        bot.reply_to(message, "Выбери вариант кнопкой (Tugmani bosib variantni tanlang)")"""
 
 
 @bot.message_handler(content_types=['text'])
@@ -1680,7 +1680,9 @@ def schedule_checker():
 
 
 schedule.every(60).seconds.do(send_email)
-Thread(target = schedule_checker).start()
+thread = Thread(target = schedule_checker)
+thread.start()
+thread.join()
 bot.enable_save_next_step_handlers(delay=2)
 
 # Load next_step_handlers from save file (default "./.handlers-saves/step.save")
