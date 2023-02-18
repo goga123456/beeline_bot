@@ -349,7 +349,8 @@ def ask_language(message):
         user_dict[chat_id] = user
         between_language_and_about_resume(message)
     except KeyError:
-        bot.reply_to(message,"Выберите один из вариантов 'Русский' или 'Ozbek tili'\n\n 'Русский' yoki 'Ozbek tili' parametrlaridan birini tanlang ")
+        chat_id = messame.chat.id
+        bot.reply_to(message.chat.id,"Выберите один из вариантов 'Русский' или 'Ozbek tili'\n\n 'Русский' yoki 'Ozbek tili' parametrlaridan birini tanlang ")
        
 
 
