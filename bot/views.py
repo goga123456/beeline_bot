@@ -347,9 +347,6 @@ def ask_language(message):
         lang = message.text
         user = User(lang)
         user_dict[chat_id] = user
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-        btn = types.KeyboardButton(lang_dict['start'][user.lang])
-        markup.row(btn)
         between_language_and_about_resume(message)
     except KeyError:
         bot.reply_to(message,"Выберите один из вариантов 'Русский' или 'Ozbek tili'\n\n 'Русский' yoki 'Ozbek tili' parametrlaridan birini tanlang ")
