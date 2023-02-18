@@ -316,10 +316,6 @@ def process_start(message):
     msg = bot.send_message(message.chat.id,
                            'Здравствуйте!\nПожалуйста, выберите язык\n\nAssalomu alaykum!\nIltimos, tilni tanlang',
                            reply_markup=markupp)
-
-    # schedule.every().day.at("03:30").do(send_email)
-    # schedule.every(10).seconds.do(send_email)
-    # Thread(target = schedule_checker).start()
     ask_language(message)
     
 
@@ -351,17 +347,12 @@ def ask_language(message):
         lang = message.text
         user = User(lang)
         user_dict[chat_id] = user
-        print(user)
-
-        print(lang_dict['start'][user.lang])
-
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
         btn = types.KeyboardButton(lang_dict['start'][user.lang])
         markup.row(btn)
         between_language_and_about_resume(message)
     except KeyError:
-        bot.reply_to(message,
-                     "Выберите один из вариантов 'Русский' или 'Ozbek tili'\n\n 'Русский' yoki 'Ozbek tili' parametrlaridan birini tanlang ")
+        bot.reply_to(message,"Выберите один из вариантов 'Русский' или 'Ozbek tili'\n\n 'Русский' yoki 'Ozbek tili' parametrlaridan birini tanlang ")
        
 
 
