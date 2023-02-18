@@ -355,13 +355,14 @@ def ask_language(message):
 
 @bot.message_handler(content_types=['text'])
 def between_language_and_about_resume(message):
-    user = user_dict[message.chat.id]
+    chat_id = message.chat.id
+    user = user_dict[chat_id]
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
     btn = types.KeyboardButton(lang_dict['start'][user.lang])
     markup.row(btn)
     bot.send_message(message.chat.id, lang_dict['salom'][user.lang], reply_markup=markup)
     ask_about_resume(message)
-    # bot.register_next_step_handler(message, ask_about_resume)
+    
 
 
 @bot.message_handler(content_types=['text'])
