@@ -22,6 +22,7 @@ import email.mime.application
 from bs4 import BeautifulSoup as bs
 import schedule
 from threading import Thread
+import time
 
 
 logger = telebot.logger
