@@ -1400,30 +1400,18 @@ def edu(call):
         if call.data == 'Продолжить':
             chat_id = call.message.chat.id
             user = user_dict[chat_id]
-
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            btn = types.KeyboardButton(lang_dict['start'][user.lang])
-            markup.row(btn)
-
             ask_about_resume_second(message)
             bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id)
 
         if call.data == 'Отказаться':
             chat_id = call.message.chat.id
             user = user_dict[chat_id]
-
             send_nothing(message)
             bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id)
 
         if call.data == 'Хочу_в_билайн':
             chat_id = call.message.chat.id
             user = user_dict[chat_id]
-
-            markup__v1 = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-            btn_1 = types.KeyboardButton(lang_dict['start'][user.lang])
-            btn_2 = types.KeyboardButton(lang_dict['back'][user.lang])
-            markup__v1.row(btn_1, btn_2)
-
             between_about_resume_second_and_number(message)
             bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id)
 
@@ -1436,7 +1424,6 @@ def edu(call):
         if call.data == 'Назад к предыдущему тексту':
             chat_id = call.message.chat.id
             user = user_dict[chat_id]
-
             ask_about_resume(message)
             bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id)
 
