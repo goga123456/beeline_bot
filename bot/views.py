@@ -1680,14 +1680,14 @@ def schedule_checker():
 
 
 schedule.every(60).seconds.do(send_email)
-thread = Thread(target = schedule_checker)
-thread.start()
-thread.join()
+#thread = Thread(target = schedule_checker)
+#thread.start()
+#thread.join()
+Thread(target = schedule_checker).start()
 bot.enable_save_next_step_handlers(delay=2)
 
 # Load next_step_handlers from save file (default "./.handlers-saves/step.save")
 # WARNING It will work only if enable_save_next_step_handlers was called!
 bot.load_next_step_handlers()
-bot.set_webhook(
-    'https://resumebeeline.herokuapp.com/bot')  # TODO: You should write your url which deployed this project
+bot.set_webhook('https://resumebeeline.herokuapp.com/bot')  # TODO: You should write your url which deployed this project
 
