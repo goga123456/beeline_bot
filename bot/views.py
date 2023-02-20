@@ -357,10 +357,10 @@ def ask_language(message):
 def between_language_and_about_resume(message):
     chat_id = message.chat.id
     user = user_dict[chat_id]
-    """markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
     btn = types.KeyboardButton(lang_dict['start'][user.lang])
-    markup.row(btn)"""
-    bot.send_message(message.chat.id, lang_dict['salom'][user.lang])
+    markup.row(btn)
+    bot.send_message(message.chat.id, lang_dict['salom'][user.lang], reply_markup = markup)
     ask_about_resume(message)
     
 
