@@ -342,14 +342,14 @@ def checker(message):
 
 @bot.message_handler(content_types=['text'])
 def ask_language(message):
-    try:
-        chat_id = message.chat.id
-        lang = message.text
-        user = User(lang)
-        user_dict[chat_id] = user
-        between_language_and_about_resume(message)
-    except KeyError:
-        bot.reply_to(message,"Выберите один из вариантов 'Русский' или 'Ozbek tili'\n\n 'Русский' yoki 'Ozbek tili' parametrlaridan birini tanlang ")
+    #try:
+    chat_id = message.chat.id
+    lang = message.text
+    user = User(lang)
+    user_dict[chat_id] = user
+    between_language_and_about_resume(message)
+    #except KeyError:
+        #bot.reply_to(message,"Выберите один из вариантов 'Русский' или 'Ozbek tili'\n\n 'Русский' yoki 'Ozbek tili' parametrlaridan birini tanlang ")
        
 
 
