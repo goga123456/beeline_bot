@@ -319,7 +319,7 @@ def process_start(message):
     ask_language(message)
     
 
-
+"""
 @bot.message_handler(content_types = ['text'])
 def checker(message):
 
@@ -337,7 +337,7 @@ def checker(message):
         return                         
     else:
         print("in else")
-        bot.reply_to(message, "Выбери вариант кнопкой (Tugmani bosib variantni tanlang)")
+        bot.reply_to(message, "Выбери вариант кнопкой (Tugmani bosib variantni tanlang)") """
 
 
 @bot.message_handler(content_types=['text'])
